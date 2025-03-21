@@ -3,7 +3,9 @@
 REST service to manage companies entities, it supports basic CRUD operations: create, update, delete and get one entity.
 
 [MongoDB](https://www.mongodb.com/docs/) is used as database. Mongo's id is used as uuid for company.
+
 [Fiber](https://docs.gofiber.io/) is used as web framework
+
 [slog](https://go.dev/blog/slog) is used as logger, log level can be controlled from config
 
 ### Architecture
