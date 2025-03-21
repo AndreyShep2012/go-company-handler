@@ -1,0 +1,8 @@
+listen_addr: 0.0.0.0:8081
+api_root: /api/v1
+log_level: debug
+mongo_uri: mongodb://localhost:27018
+connect_timeout_sec: 2
+mongo_database_name: test-company-handler
+mongo_companies_collection: test-companies
+

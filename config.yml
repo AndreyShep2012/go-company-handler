@@ -1,0 +1,6 @@
+listen_addr: 0.0.0.0:8080
+api_root: /api/v1
+log_level: info
+mongo_uri: mongodb://localhost:27017
+connect_timeout_sec: 5
+jwt_secret_key: a-string-secret-at-least-256-bits-long

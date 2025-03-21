@@ -1,0 +1,79 @@
+linters:
+  # please, do not use `enable-all`: it's deprecated and will be removed soon.
+  # inverted configuration with `enable-all` and `disable` is not scalable during updates of golangci-lint
+  disable-all: true
+  enable:
+    - bodyclose
+    - depguard
+    - dogsled
+    - dupl
+    - errcheck
+    - forcetypeassert
+    - gochecknoinits
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofmt
+    - gomoddirectives
+    - goprintffuncname
+    - gosec
+    - gosimple
+    - govet
+    - importas
+    - ineffassign
+    - misspell
+    - nakedret
+    - nilerr
+    - revive
+    - rowserrcheck
+    - staticcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - wastedassign
+    - whitespace
+linters-settings:
+  dupl:
+    threshold: 500
+  stylecheck:
+    checks: ["all"]
+  gocritic:
+    disabled-checks:
+      - commentFormatting
+  revive:
+    rules:
+      - name: var-naming
+        disabled: true
+  depguard:
+    rules:
+      main:
+        files:
+          - $all
+          - "!$test"
+        allow:
+          - $gostd
+          - github.com/gofiber/fiber/v2
+          - github.com/prometheus/client_golang
+          - github.com/ansrivas/fiberprometheus/v2
+          - github.com/gofiber/swagger
+          - github.com/google/uuid
+          - github.com/segmentio/kafka-go
+          - github.com/go-playground/validator/v10
+          - github.com/gofiber/contrib/jwt
+          - github.com/golang-jwt
+          - github.com/ilyakaznacheev/cleanenv
+          - golang.org/x/sync/errgroup
+      tests:
+        list-mode: lax
+        files:
+          - $test
+        allow:
+          - $all
+  goconst:
+    ignore-tests: true
+run:
+  timeout: 5m
+  go: ""
+  issues-exit-code: 1
